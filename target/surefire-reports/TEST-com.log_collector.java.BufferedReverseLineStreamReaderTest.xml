@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.log_collector.java.BufferedReverseLineStreamReaderTest" time="1.601" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="16"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/harish.nelakurthi/Personal/log_collector/target/test-classes:/Users/harish.nelakurthi/Personal/log_collector/target/classes:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.0/jackson-databind-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.0/jackson-annotations-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.0/jackson-core-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-module-junit4/2.0.0/powermock-module-junit4-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-module-junit4-common/2.0.0/powermock-module-junit4-common-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-reflect/2.0.0/powermock-reflect-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/net/bytebuddy/byte-buddy/1.9.3/byte-buddy-1.9.3.jar:/Users/harish.nelakurthi/.m2/repository/net/bytebuddy/byte-buddy-agent/1.9.3/byte-buddy-agent-1.9.3.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-core/2.0.0/powermock-core-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/Users/harish.nelakurthi/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/harish.nelakurthi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-api-mockito2/2.0.0/powermock-api-mockito2-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-api-support/2.0.0/powermock-api-support-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/mockito/mockito-core/2.23.0/mockito-core-2.23.0.jar:/Users/harish.nelakurthi/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="16"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-16.0.1.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/harish.nelakurthi/Personal/log_collector/target/surefire/surefirebooter-20240129011902496_3.jar /Users/harish.nelakurthi/Personal/log_collector/target/surefire 2024-01-29T01-19-02_153-jvmRun1 surefire-20240129011902496_1tmp surefire_0-20240129011902496_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/harish.nelakurthi/Personal/log_collector/target/test-classes:/Users/harish.nelakurthi/Personal/log_collector/target/classes:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.0/jackson-databind-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.0/jackson-annotations-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.0/jackson-core-2.16.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-module-junit4/2.0.0/powermock-module-junit4-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-module-junit4-common/2.0.0/powermock-module-junit4-common-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-reflect/2.0.0/powermock-reflect-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/net/bytebuddy/byte-buddy/1.9.3/byte-buddy-1.9.3.jar:/Users/harish.nelakurthi/.m2/repository/net/bytebuddy/byte-buddy-agent/1.9.3/byte-buddy-agent-1.9.3.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-core/2.0.0/powermock-core-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/Users/harish.nelakurthi/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/harish.nelakurthi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-api-mockito2/2.0.0/powermock-api-mockito2-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/powermock/powermock-api-support/2.0.0/powermock-api-support-2.0.0.jar:/Users/harish.nelakurthi/.m2/repository/org/mockito/mockito-core/2.23.0/mockito-core-2.23.0.jar:/Users/harish.nelakurthi/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/harish.nelakurthi"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-16.0.1.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/harish.nelakurthi/Personal/log_collector"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/harish.nelakurthi/Personal/log_collector/target/surefire/surefirebooter-20240129011902496_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="16.0.1+9-24"/>
+    <property name="user.name" value="harish.nelakurthi"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="11.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/harish.nelakurthi/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/b8/x744gqk962j__djws200pkmw0000gn/T/"/>
+    <property name="java.version" value="16.0.1"/>
+    <property name="user.dir" value="/Users/harish.nelakurthi/Personal/log_collector"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/Users/harish.nelakurthi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="16.0.1+9-24"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="60.0"/>
+  </properties>
+  <testcase name="testReadLinesWithRandomChars" classname="com.log_collector.java.BufferedReverseLineStreamReaderTest" time="1.336"/>
+  <testcase name="testReadLines" classname="com.log_collector.java.BufferedReverseLineStreamReaderTest" time="0.205"/>
+</testsuite>

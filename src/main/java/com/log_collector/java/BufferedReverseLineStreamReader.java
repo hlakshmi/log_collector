@@ -32,7 +32,6 @@ public class BufferedReverseLineStreamReader {
             }
             if(lineContainsKeyWords(line, keyWords)) {
                 result.add(line);
-                System.out.println("Line: " + line);
                 count++;
             }
         }

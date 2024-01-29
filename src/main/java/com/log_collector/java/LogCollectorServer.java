@@ -42,7 +42,6 @@ public class LogCollectorServer {
                 }
 
                 String response = builder.toString();
-                System.out.println("response: " + response);
                 exchange.sendResponseHeaders(200, response.length());
                 OutputStream os = exchange.getResponseBody();
                 os.write(response.getBytes());
