@@ -13,7 +13,7 @@ public class BufferedReverseLineStreamReader {
 
     private static final String LOG_DIR_PATH = "/var/log";
 
-    public List<String> readLines(String filePath, int numLines, String[] keyWords) throws IOException, InvalidPathException {
+    public List<String> readLines(String filePath, int numLines, List<String> keyWords) throws IOException, InvalidPathException {
         List<String> result = new ArrayList<>();
         File file = new File(filePath);
         String canonicalPath = file.getCanonicalPath();
@@ -38,7 +38,7 @@ public class BufferedReverseLineStreamReader {
         return result;
     }
 
-    private boolean lineContainsKeyWords(String line, String[] keyWords) {
+    private boolean lineContainsKeyWords(String line, List<String> keyWords) {
         for(String word: keyWords) {
             if(!line.contains(word)) {
                 return false;
@@ -47,7 +47,7 @@ public class BufferedReverseLineStreamReader {
         return true;
     }
 
-    private boolean isValidPath(String canonicalPath) {
+    public boolean isValidPath(String canonicalPath) {
         Path path = Paths.get(canonicalPath);
         Path parent = path.getParent();
         String dirName = parent.toString();

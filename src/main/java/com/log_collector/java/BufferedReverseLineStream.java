@@ -21,7 +21,7 @@ public class BufferedReverseLineStream extends InputStream {
     private boolean lineBuffered;
 
     public BufferedReverseLineStream(File file) throws IOException {
-        new BufferedReverseLineStream(file, DEFAULT_BUFFER_SIZE_BYTES, MAX_LINE_SIZE_BYTES);
+        this(file, DEFAULT_BUFFER_SIZE_BYTES, MAX_LINE_SIZE_BYTES);
     }
 
     public BufferedReverseLineStream(File file, int bufferSize, int maxLineSizeBytes) throws IOException {
@@ -41,24 +41,33 @@ public class BufferedReverseLineStream extends InputStream {
         }
 
         if(lineBuffered) {
+            if(currLineReadPos == 0) {
+                lineBuffered = false;
+            }
             return currentLine[currLineReadPos--];
         }
         return 0;
     }
 
     private void init(File file) throws IOException {
-        in = new RandomAccessFile(file, "r");
-        currFilePos = file.length() - 1;
-        in.seek(currFilePos);
-        if(in.readByte() == 0xA) {
-            // If the current byte is new line, decrement the move to the previous byte.
-            currFilePos--;
-        }
         currentLine = new byte[maxLineSizeBytes];
         buffer = new byte[bufferSize];
         currLineWritePos = 0;
         currLineReadPos = 0;
         lineBuffered = false;
+
+        in = new RandomAccessFile(file, "r");
+        currFilePos = file.length() - 1;
+        if(currFilePos == -1) {
+            currBufferPos = -1;
+            currLineReadPos = -1;
+            return;
+        }
+        in.seek(currFilePos);
+        if(in.readByte() == 0xA) {
+            // If the current byte is new line, decrement the move to the previous byte.
+            currFilePos--;
+        }
         fillBuffer();
         fillCurrentLine();
     }
@@ -111,6 +120,7 @@ public class BufferedReverseLineStream extends InputStream {
             byte b = buffer[currBufferPos--];
             if(b == 0xA) {
                 // newline (LF) found, line is fully constructed.
+                currLineReadPos = currLineWritePos - 1;
                 lineBuffered = true;
                 break;
             }
