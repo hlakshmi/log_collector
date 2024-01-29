@@ -32,6 +32,7 @@ public class BufferedReverseLineStreamReader {
             }
             if(lineContainsKeyWords(line, keyWords)) {
                 result.add(line);
+                System.out.println("Line: " + line);
                 count++;
             }
         }
@@ -51,6 +52,6 @@ public class BufferedReverseLineStreamReader {
         Path path = Paths.get(canonicalPath);
         Path parent = path.getParent();
         String dirName = parent.toString();
-        return dirName.startsWith(LOG_DIR_PATH);
+        return dirName.contains(LOG_DIR_PATH);
     }
 }

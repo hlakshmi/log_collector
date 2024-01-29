@@ -5,7 +5,7 @@ import java.io.*;
 public class BufferedReverseLineStream extends InputStream {
 
     private static final int MAX_LINE_SIZE_BYTES = 1024;
-    private static final int DEFAULT_BUFFER_SIZE_BYTES = 1024*1024;
+    private static final int DEFAULT_BUFFER_SIZE_BYTES = 1024*1024*1024;
 
     private RandomAccessFile in;
     private byte[] buffer;

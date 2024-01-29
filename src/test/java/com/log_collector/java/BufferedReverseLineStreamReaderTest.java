@@ -34,9 +34,10 @@ public class BufferedReverseLineStreamReaderTest {
 
         BufferedReverseLineStreamReader reader = spy(new BufferedReverseLineStreamReader());
         when(reader.isValidPath(file.getCanonicalPath())).thenReturn(true);
-        List<String> lines = reader.readLines(file.getPath(), 10, new ArrayList<>());
-        Assert.assertEquals(2, lines.size());
-        Assert.assertEquals("This is a new line", lines.get(0));
-        Assert.assertEquals("Hello World", lines.get(1));
+        List<String> keywords = new ArrayList<>();
+        keywords.add("World");
+        List<String> lines = reader.readLines(file.getPath(), 10, keywords);
+        Assert.assertEquals(1, lines.size());
+        Assert.assertEquals("Hello World", lines.get(0));
     }
 }
