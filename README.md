@@ -11,8 +11,8 @@ REST API Server for reading logs
 ## Installing the Server
 * Checkout the source code
 * cd log_collector
-* mvn package
-* java -cp target/log_collector-1.0-SNAPSHOT.jar com.log_collector.java.LogCollectorServer
+* mvn clean compile assembly:single
+* java -cp target/log_collector-1.0-SNAPSHOT-jar-with-dependencies.jar com.log_collector.java.LogCollectorServer
     * This would start a HTTP Server on port 8000
 
 ## Sending API requests
