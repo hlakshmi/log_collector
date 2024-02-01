@@ -4,4 +4,4 @@
 *.iml
 misc.xml
 modules.xml
-target/*.*
+.idea/*
